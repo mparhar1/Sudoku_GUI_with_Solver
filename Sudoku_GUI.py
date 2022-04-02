@@ -1,10 +1,13 @@
+# ----------------
 # Import libraries
+# ----------------
 import pygame
 import time
 pygame.font.init()
 
-
+# --------------------------
 # Class for the puzzle board
+# --------------------------
 class Grid:
     grid_board = [
         [3, 0, 0, 6, 1, 0, 0, 0, 8],
@@ -83,7 +86,6 @@ class Grid:
         else:
             return None
 
-
     def solve(self):
         find = find_empty(self.model)
         if not find:
@@ -123,8 +125,9 @@ class Grid:
                 pygame.time.delay(20)
         return False
 
-
-# Class for cubes on the puzzle board
+# ---------------------------------------
+# Class for the cubes on the puzzle board
+# ---------------------------------------
 class Cube:
     rows = 9
     cols = 9
@@ -171,7 +174,9 @@ class Cube:
     def set_temp(self, val):
         self.temp = val
 
-# find_empty function finds the row and column coordinate of empty cube
+# ------------------------------------------------------------------------
+# find_empty function finds the row and column coordinate of an empty cube
+# ------------------------------------------------------------------------
 def find_empty(bo):
     for i in range(len(bo)):
         for j in range(len(bo[0])):
@@ -179,8 +184,9 @@ def find_empty(bo):
                 return (i, j)
     return None
 
-
+# -------------------------------------------------------------------------
 # valid function verifies the entry value for that row, column, and 3x3 box
+# -------------------------------------------------------------------------
 def valid(bo, num, pos):
     # Check the row
     for i in range(len(bo[0])):
@@ -199,7 +205,6 @@ def valid(bo, num, pos):
                 return False
     return True
 
-
 def redraw_window(win, grid_board, time):
     win.fill((255, 255, 255))
     fnt = pygame.font.SysFont("timesnewroman", 30)
@@ -207,8 +212,9 @@ def redraw_window(win, grid_board, time):
     win.blit(text, (10, 555))
     grid_board.draw()
 
-
+# ---------------------------------------------------------------
 # format_time function creates a string of the updating play time
+# ---------------------------------------------------------------
 def format_time(seconds):
     secs = seconds % 60
     minutes = seconds // 60
@@ -217,7 +223,9 @@ def format_time(seconds):
     time_str = str(hrs) + ":" + str(mins) + ":" + str(secs) + " "
     return time_str
 
-
+# ---------------------
+# Main/driving function
+# ---------------------
 def main():
     win = pygame.display.set_mode((540,600))
     pygame.display.set_caption("Sudoku")
@@ -288,7 +296,6 @@ def main():
             grid_board.sketch(key)
         redraw_window(win, grid_board, play_time)
         pygame.display.update()
-
 
 main()
 pygame.quit()
