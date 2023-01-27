@@ -6,7 +6,7 @@ Use your mouse to select a box and then type a number on your keyboard to pencil
 
 # Game Rules/Objective
 Sudoku has four rules:
-  1. Each row must contain the numbers 1-9, without any repititions
-  2. Each column must contain the numbers 1-9, without any repititions
-  3. Each nonet (the 3x3 blocks) must contain the numbers 1-9, without any repititions
+  1. Each row must contain the numbers 1-9, without any repetitions
+  2. Each column must contain the numbers 1-9, without any repetitions
+  3. Each nonet (the 3x3 blocks) must contain the numbers 1-9, without any repetitions
   4. DO NOT GUESS! Every Sudoku puzzle has a unique solution and the clues from the start of the game is all you need to logically solve it
