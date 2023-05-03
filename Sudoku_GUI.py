@@ -220,8 +220,8 @@ def format_time(seconds):
     minutes = seconds // 60
     mins = minutes % 60
     hrs = minutes // 60
-    time_str = str(hrs) + ":" + str(mins) + ":" + str(secs) + " "
-    return time_str
+    timeStr = f"{hrs:02d}" + ":" + f"{mins:02d}" + ":" + f"{secs:02d}"
+    return timeStr
 
 # ---------------------
 # Main/driving function
